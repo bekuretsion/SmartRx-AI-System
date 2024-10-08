@@ -1,0 +1,45 @@
+START:
+1. TRAINING PHASE (Done separately)
+   - Collect or load dataset containing symptoms and corresponding diseases
+   - Split data into features (symptoms) and labels (diseases)
+   - Preprocess data (encoding)
+   - Train the machine learning model on training data
+   - Test the model on the test data to evaluate performance
+   - Once satisfied, save the trained model to a file (using `joblib` or `pickle`)
+     - Save model to "model.pkl"
+
+2. FLASK APPLICATION PHASE
+   - Import Flask, render_template, request
+   - Import the necessary library to load the ML model (e.g., `joblib` or `pickle`)
+   - Import any libraries needed for input preprocessing (e.g., `numpy`, `pandas`)
+
+   2.1 START FLASK APP
+       - Initialize Flask app
+
+   2.2 LOAD SAVED MODEL
+       - Load the previously saved ML model from the file (e.g., "model.pkl")
+
+3. DEFINE ROUTES
+   3.1 HOMEPAGE ROUTE (GET)
+       - Create a `GET` route to display the homepage
+       - Render an HTML page containing a form for user input (symptoms)
+
+   3.2 PREDICTION ROUTE (POST)
+       - When user submits symptoms via the form:
+         - Extract user input from the request
+         - Preprocess the input data (e.g., convert symptoms to numerical format)
+         - Use the ML model to predict the disease based on symptoms
+         - Capture the model’s prediction
+         - Retrieve additional information based on the prediction:
+           - Disease Description
+           - Precautions
+           - Medications
+           - Recommended Workouts
+           - Suggested Diets
+
+4. RETURN DETAILED INFORMATION TO USER
+   - Pass the disease description, precautions, medications, workouts, and diets back to the frontend
+   - Display all information on the webpage
+
+5. RUN FLASK SERVER
+   - Start the Flask app, allowing users to interact with the web interface
