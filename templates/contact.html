@@ -31,6 +31,25 @@
             font-weight: bold;
             color: rgb(255, 0, 0);
         }
+        .blink_me {
+  animation: blinker 1.5s linear infinite;
+}
+
+@keyframes blinker {
+    
+  50% {
+    opacity: 0.5;
+    color: red;
+  }
+  100% {
+    opacity: 1;
+    color: rgb(226, 213, 70);
+  }
+  200% {
+    opacity: 0.5;
+    color: red;
+  }
+}
     </style>
 </head>
 <body>
@@ -41,7 +60,7 @@
             <div class="logo">
                 <img class="myimg" src="{{ url_for('static', filename='img.png') }}" alt="">
             </div>
-            <a class="navbar-brand" href="#">SmartRx Center</a>
+            <a class="navbar-brand blink_me" href="#">SmartRx Center</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>

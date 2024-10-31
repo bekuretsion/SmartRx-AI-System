@@ -36,6 +36,25 @@
         background-color: black;
         color: white;
       }
+      .blink_me {
+  animation: blinker 1.5s linear infinite;
+}
+
+@keyframes blinker {
+    
+  50% {
+    opacity: 0.5;
+    color: red;
+  }
+  100% {
+    opacity: 1;
+    color: rgb(226, 213, 70);
+  }
+  200% {
+    opacity: 0.5;
+    color: red;
+  }
+}
     </style>
   </head>
   <body>
