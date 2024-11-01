@@ -6,11 +6,11 @@ START:
    - Train the machine learning model on training data
    - Test the model on the test data to evaluate performance
    - Once satisfied, save the trained model to a file (using `joblib` or `pickle`)
-     - Save model to "model.pkl"
+     - Save model to "{name of model}.pkl"(name of the best model you choose)
 
 2. FLASK APPLICATION PHASE
    - Import Flask, render_template, request
-   - Import the necessary library to load the ML model (e.g., `joblib` or `pickle`)
+   - Import the necessary library to load the ML model (`pickle`)
    - Import any libraries needed for input preprocessing (e.g., `numpy`, `pandas`)
 
    2.1 START FLASK APP
