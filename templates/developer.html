@@ -6,47 +6,41 @@
     <title>Developer</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <style>
-        .container {
-            margin-top: 50px;
-            color: #fff;
-        }
+        /* Main color adjustments */
         body {
-            background-color: #7cb4f5;
-            background-image: url('static/image.png');
-            background-size: cover;
+            background-color: #f4f7fa;
+            background-image: url('static/abstract-dark-blue.jpg');
+            background-size: 90%;
             background-position: center;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
         }
-        .header {
-            color: #fff;
-            background-color: #b59deaeb;
-            padding: 15px;
-            border-radius: 10px;
-            opacity: 0.85;
-        }
-        .header span {
-            color: #f21919;
-            padding: 0 5px;
-            font-weight: bold;
-        }
-        .navbar-brand {
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            font-size: 25px;
-            font-weight: bold;
-            color: #ff0000;
-        }
-        .logo {
+        logo {
             width: 50px;
             height: 50px;
+            color: black;
             margin-top: 0;
             margin-left: 2px;
         }
+
         .myimg {
             width: 50px;
             height: 50px;
             border: 2px solid black;
             border-radius: 25px;
         }
-.blink_me {
+
+        .navbar-brand{
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 25px;
+            font-weight: bold;
+            color: rgb(255, 0, 0);
+            font-style:calc(italic + bold);
+        }
+        #navbarSupportedContent{
+            margin-left: 20px;
+        }
+        .blink_me {
   animation: blinker 1.5s linear infinite;
 }
 
@@ -65,12 +59,56 @@
     color: red;
   }
 }
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+.container {
+            margin-top: 50px;
+            color: #555;
+        }
+        .header {
+            color: #f6f8f9;
+            padding: 15px;
+            font-weight: 500;
+            opacity: 0.85;
+        }
+        .header span {
+            color: #ff5722;
+            padding: 0 5px;
+            font-weight: 600;
+        }
+        p{
+            font-family: 'Times New Roman', Times, serif;
+            color: #f4f7fa;
+        }
+        .content-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .photo-column {
+            flex: 1;
+            max-width: 300px;
+            align-self: center;
+            text-align: center;
+        }
+        .photo-column img {
+            width: 100%;
+            border-radius: 8px;
+            border: 3px solid #fcfbfa;
+            border-radius: 50%;
+        }
+        .text-column {
+            flex: 2;
+        }
     </style>
 </head>
 <body>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid">
         <!-- Logo -->
         <div class="logo">
@@ -83,7 +121,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="{{ url_for('index') }}">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/about">About</a>
@@ -108,22 +146,27 @@
 
 <!-- Main Content -->
 <div class="container my-4 mt-4">
-    <h6 class="header"> About 
-        <p>Bekuretsion Tadios</p>
-        <span>PowerCoders Participant</span>
-    </h6>
+    <div class="content-row">
+        <!-- Left Column for Photo -->
+        <div class="photo-column">
+            <img src="{{ url_for('static', filename='AI_generated_Professional_Headshot.jpg') }}" alt="Photo of Bekuretsion Tadios">
+        </div>
 
-    <h5 class="header">Meet the Developer</h5>
-    <p>Hello, I'm Bekuretsion Tadios, a passionate AI and Machine Learning Engineer eager to immerse myself in this field. I am dedicated to harnessing the power of technology to make a positive impact on people's lives. Allow me to share a bit about my journey in the world of artificial intelligence and machine learning.</p>
+        <!-- Right Column for Text Content -->
+        <div class="text-column">
+            <h5 class="header">Meet the Developer</h5>
+            <p>Hello, I'm Bekuretsion Tadios,Participant of Powercoders Bootcamp, a passionate AI and Machine Learning Engineer eager to immerse myself in this field. I am dedicated to harnessing the power of technology to make a positive impact on people's lives. Allow me to share a bit about my journey in the world of artificial intelligence and machine learning.</p>
 
-    <h5 class="header">My Expertise</h5>
-    <p>With a strong academic background in Electronics and Communication Engineering and a deep passion about AI, I have honed my skills in developing intelligent systems that can learn from data and make informed decisions. My interests span natural language processing, computer vision, and predictive analytics.</p>
+            <h5 class="header">My Expertise</h5>
+            <p>With a strong academic background in Electronics and Communication Engineering and a deep passion about AI, I have honed my skills in developing intelligent systems that can learn from data and make informed decisions. My interests span natural language processing, computer vision, and predictive analytics.</p>
 
-    <h5 class="header">A Commitment to Excellence</h5>
-    <p>My work is driven by a commitment to excellence and a belief that technology should be accessible and beneficial to everyone. Whether it's developing predictive models, creating intelligent algorithms, or designing user-friendly interfaces, I strive for solutions that are both cutting-edge and user-centric.</p>
+            <h5 class="header">A Commitment to Excellence</h5>
+            <p>My work is driven by a commitment to excellence and a belief that technology should be accessible and beneficial to everyone. Whether it's developing predictive models, creating intelligent algorithms, or designing user-friendly interfaces, I strive for solutions that are both cutting-edge and user-centric.</p>
 
-    <h5 class="header">Join Me on this Journey</h5>
-    <p>I invite you to explore and experience firsthand the fusion of AI and healthcare. Together, we can empower individuals with knowledge, promote well-being, and contribute to a brighter and healthier future.</p>
+            <h5 class="header">Join Me on this Journey</h5>
+            <p>I invite you to explore and experience firsthand the fusion of AI and healthcare. Together, we can empower individuals with knowledge, promote well-being, and contribute to a brighter and healthier future.</p>
+        </div>
+    </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
