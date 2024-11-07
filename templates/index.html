@@ -37,7 +37,13 @@
   animation: blinker 1.5s linear infinite;
 }
 
-@keyframes blinker {
+body{
+  background-color: rgb(0, 0, 0); 
+  color: #0a0a0a; 
+  background-image: url('https://raw.githubusercontent.com/Giphy/GiphyAPI/master/api_giphy_header.gif');
+    background-size: cover;
+}
+  @keyframes blinker {
     
   50% {
     opacity: 0.5;
@@ -64,7 +70,7 @@
         <div class="container-fluid">
             <!-- Logo at the top-left corner -->
             <div class="logo">
-                <img class="myimg" src="{{ url_for('static', filename='img.png') }}" alt="">
+                <img class="myimg" src="https://media.giphy.com/media/2g8EYDN0VWFMY/giphy.gif" alt="Gif image">
             </div>
 
             <a class="navbar-brand blink_me" href="#">SmartRx Center</a>
@@ -102,7 +108,7 @@
 
 <!-- main form of page -->
 <h1 class="mt-4 my-4 text-center text-green" style="
-font-size: 2em;
+font-size: 1em;
 font-weight: bold;
 background: linear-gradient(to right, #ff7e5f, #feb47b);
 -webkit-background-clip: text;
@@ -135,7 +141,7 @@ background: linear-gradient(to right, #ff7e5f, #feb47b);
 {% if predicted_disease %}
 
 <!-- Results -->
-<h1 class="text-center my-4 mt-4">Our AI System Results</h1>
+<h1 class="text-center my-4 mt-4">Results Powered by Our AI Technology</h1>
 <div class="container">
 
     <div class="result-container">
