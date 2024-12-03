@@ -15,6 +15,7 @@ START:
 
    2.1 START FLASK APP
        - Initialize Flask app
+       -working on the route aswell
 
    2.2 LOAD SAVED MODEL
        - Load the previously saved ML model from the file (e.g., "model.pkl")
